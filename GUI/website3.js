@@ -29,6 +29,7 @@ function getVal() {
     const creditC = document.getElementById('creditC').value;
     const appraised = document.getElementById('appraised').value;
     const down = document.getElementById('down').value;
+    console.log(income);
 
     // Create an object with the form values
     const formValues = {
@@ -41,11 +42,5 @@ function getVal() {
         APPRAISED: appraised,
         DOWN: down
     };
-
-    var jsonString;
-    jsonString=JSON.stringify(formValues);
-
-
-
 }
 
