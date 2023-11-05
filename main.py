@@ -28,7 +28,7 @@ else:
 
 dictionary = {
     "approved" : approved,
-    "userPoints" : userPoints[0],
+    "userPoints" : int(userPoints[0]*100),
     "creditPoint" : pointScale[0],
     "ltvPoint" : pointScale[1],
     "dtiPoint" : pointScale[2],
