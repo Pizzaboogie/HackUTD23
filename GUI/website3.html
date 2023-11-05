@@ -102,18 +102,20 @@
             
             
         }
-        /* .scoreboxfill1{
-            width:50%;
-            overflow: hidden;
-        } */
-        .scoreboxfill1{
-            background-color: rgba(13, 12, 69, 1);
-            background:linear-gradient(to right,rgba(223, 44, 44, 0.8), rgba(30, 224, 30, 0.815));
-            width: 100%;
+        
+        .scoreboxfill1,.scoreboxfill2,.scoreboxfill3,.scoreboxfill4{
+            width: 50%;
             height: 100%;
+            background:linear-gradient(to right,rgba(223, 44, 44, 0.8), rgba(30, 224, 30, 0.815));
+            background-size: 100% 100%;
+            overflow: hidden;
             border: 1px solid #ccc;
             border-radius: 15px;
         }
+        .scoreboxfill2{width: 75%;}
+        .scoreboxfill3{width: 80%;}
+        .scoreboxfill4{width: 95%;}
+        
     </style>
 </head>
 
@@ -121,7 +123,7 @@
     <img class="logo" src="/Logo.png">
     <form id="msform">
         
-        <fieldset>
+        <!-- <fieldset>
 
             <h2 class="toptext">Fannie Mae </h2>
             <input type="text" name="income" id="income" placeholder="Monthly Income*($)" />
@@ -133,7 +135,7 @@
             <input type="text" name="appraised" id="appraised" placeholder="Home Appraised Value" />
             <input type="text" name="downP" id="down" placeholder="Down Payment Amount" />
             <input type="button" name="calc" class="calc" value="Check Eligibility" />
-        </fieldset>
+        </fieldset> -->
         <fieldset>
             <div style="margin-top:30px"></div>
             Credit Rating
@@ -143,15 +145,18 @@
             </div>
             LTV (Loan to Value)
             <div class="scorebox">
-                FUCK utr motnierhno
+                <div class="scoreboxfill2">
+                </div>
             </div>
             DTI (Debt to Income ratio)
             <div class="scorebox">
-                suck a fat cock
+                <div class="scoreboxfill3">
+                </div>
             </div>
             FEDTI 
             <div class="scorebox">
-                suck a fat cock
+                <div class="scoreboxfill4">
+                </div>
             </div>
         </fieldset>
     </form>
