@@ -1,0 +1,25 @@
+{
+  "name": "hackutd23",
+  "version": "1.0.0",
+  "description": "Fannie Mae Group ASVS",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pizzaboogie/HackUTD23.git"
+  },
+  "keywords": [
+    "sudo"
+  ],
+  "author": "ASVS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pizzaboogie/HackUTD23/issues"
+  },
+  "homepage": "https://github.com/Pizzaboogie/HackUTD23#readme"
+}
