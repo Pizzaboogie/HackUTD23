@@ -1,9 +1,11 @@
 const http = require('http');
 const fs = require("fs"); 
 const express = require('express');
+const cors = require('cors'); // Don't forget to install the 'cors' package with npm
 
 const app = express();
-
+app.use(cors()); 
+app.use(express.static('public'));
 // Add headers
 app.use(function (req, res, next) {
     // Website you wish to allow to connect
@@ -20,11 +22,22 @@ app.use(function (req, res, next) {
 app.use(express.json());
 
 app.post('/valuesJson', (req, res) => {
-  console.log(req.body); // Log the request body
+   // Log the request body
   var newData2 = JSON.stringify(req.body);
   fs.writeFileSync("data2.json", newData2);
-  console.log("New data added");
   res.json({message: 'Data received!'}); // Send a response
+});
+
+
+
+app.get('/getJSON', (req, res) => {
+  fs.readFile('\GUI\\output.json', 'utf8', (err, data) => {
+      if (err) {
+          console.error(err);
+          return res.status(500).send(err);
+      }
+      res.send(JSON.parse(data));
+  });
 });
 
 app.listen(3000, () => console.log('Server started on port 3000'));

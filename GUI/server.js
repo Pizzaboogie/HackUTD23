@@ -1,6 +1,4 @@
 
-
-
 document.addEventListener('DOMContentLoaded', (event) => {
     const form = document.getElementById('msform');
     const fieldsets = Array.from(form.getElementsByTagName('fieldset'));
@@ -8,10 +6,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
     
     let currentFieldsetIndex = 0;
-
+    
     calcButton.addEventListener('click', (event) => {
         event.preventDefault();
         var jsonvals=getVal();
+        
         printval(jsonvals);
         // Hide current fieldset
         fieldsets[currentFieldsetIndex].style.display = 'none';
@@ -21,6 +20,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (currentFieldsetIndex < fieldsets.length) {
             fieldsets[currentFieldsetIndex].style.display = 'block';
         }
+        changeVal();
     });
 });
 
@@ -75,5 +75,30 @@ fetch(url, {
 .catch((error) => {
   console.error('Error:', error);
 });
+
+var output;
+fetch('http://127.0.0.1:3000/getJSON')
+    .then(response => response.json())
+    .then(data => {
+      output = data;
+      console.log(output);
+      var numericalValues = Object.values(output).filter(value => typeof value === 'number');
+      var meter=document.getElementsByClassName('scoreboxfill1');
+  meter[0].style.width=numericalValues[1]+'%';
+  var meter=document.getElementsByClassName('scoreboxfill2');
+  meter[0].style.width=numericalValues[2]+'%';
+  var meter=document.getElementsByClassName('scoreboxfill3');
+  meter[0].style.width=numericalValues[3]+'%';
+  var meter=document.getElementsByClassName('scoreboxfill4');
+  meter[0].style.width=numericalValues[4]+'%';
+    })
+      
+    .catch(error => console.error('Error:', error));
+}
+
+
+
+function changeVal(){
+  
 }
 
