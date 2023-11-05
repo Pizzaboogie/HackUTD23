@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <head>
     <script src="server.js"></script>
     <title>Hack UTD 23</title>
@@ -102,19 +101,39 @@
             
             
         }
-        
+        .tooltip {
+            position: relative;
+            
+            border-bottom: 1px dotted black; 
+          }
+          .tooltiptext {
+            margin-bottom: 100px;
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            position: ;
+            z-index: 1;
+          }
+          .tooltip:hover  {
+            
+          }
         .scoreboxfill1,.scoreboxfill2,.scoreboxfill3,.scoreboxfill4{
-            width: 100%;
+            width: 0%;
             height: 100%;
-            background:linear-gradient(to right,rgba(223, 44, 44, 0.8), rgba(30, 224, 30, 0.815));
+            background-color: rgba(13, 12, 69, 0.75);
             background-size: 100% 100%;
             overflow: hidden;
             border: 1px solid #ccc;
             border-radius: 15px;
+            transition: width 2.5s ease-out;
         }
-        .scoreboxfill2{width: 75%;}
-        .scoreboxfill3{width: 80%;}
-        .scoreboxfill4{width: 95%;}
+        .scoreboxfill2{width: 0%;transition: width 2.5s ease-out;}
+        .scoreboxfill3{width: 0%;transition: width 2.5s ease-out;}
+        .scoreboxfill4{width: 0%;transition: width 2.5s ease-out;}
         
     </style>
 </head>
@@ -142,7 +161,9 @@
             <div style="margin-top:30px"></div>
             Credit Rating
             <div class="scorebox">
+                
                 <div class="scoreboxfill1">
+                    
                 </div>
             </div>
             LTV (Loan to Value)
