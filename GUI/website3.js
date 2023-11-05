@@ -29,18 +29,24 @@ function getVal() {
     const creditC = document.getElementById('creditC').value;
     const appraised = document.getElementById('appraised').value;
     const down = document.getElementById('down').value;
-    console.log(income);
 
     // Create an object with the form values
-    const formValues = {
-        INCOME: income,
-        MORTGAGE: mortgage,
-        CREDIT: credit,
-        CAR: car,
-        STUDENT: student,
-        CREDITC: creditC,
-        APPRAISED: appraised,
-        DOWN: down
-    };
+    
+
+    
 }
+
+var formValues = {
+    INCOME: income,
+    MORTGAGE: mortgage,
+    CREDIT: credit,
+    CAR: car,
+    STUDENT: student,
+    CREDITC: creditC,
+    APPRAISED: appraised,
+    DOWN: down
+};
+var valuesJson=JSON.stringify(formValues);
+    var fs=require('fs');
+    fs.writeFile('output.json',valuesJson);
 
