@@ -29,11 +29,10 @@ else:
 dictionary = {
     "approved" : approved,
     "userPoints" : int(userPoints[0]*100),
-    "creditPoint" : pointScale[0],
-    "ltvPoint" : pointScale[1],
-    "dtiPoint" : pointScale[2],
-    "fedtiPoint" : pointScale[3]
+    "creditPoint" : int(pointScale[0]/0.25 * 100),
+    "ltvPoint" : int(pointScale[1]/0.25 * 100),
+    "dtiPoint" : int(pointScale[2]/0.25 * 100),
+    "fedtiPoint" : int(pointScale[3]/0.25 * 100)
 }
 json_object = json.dumps(dictionary)
 outputFile.write(json_object)
-
