@@ -1,4 +1,6 @@
 
+
+
 document.addEventListener('DOMContentLoaded', (event) => {
     const form = document.getElementById('msform');
     const fieldsets = Array.from(form.getElementsByTagName('fieldset'));
@@ -46,7 +48,6 @@ function getVal() {
     // Create an object with the form values
     
 
-    
 }
 
 
@@ -54,27 +55,23 @@ function printval(formValues){
     console.log("sai sucks")
     var valuesJson=JSON.stringify(formValues);
     console.log(valuesJson);
-    var blob = new Blob([valuesJson], {type:"application/json"});
 
-// Create a link element
-var downloadLink = document.createElement('a');
 
-// Create a downloadable link for the JSON file
-downloadLink.href = URL.createObjectURL(blob);
-downloadLink.download = "data.json";
 
-// Append the link to the body
-document.body.appendChild(downloadLink);
+var url = 'http://127.0.0.1:3000/valuesJson';
 
-// Simulate a click to start the download
-downloadLink.click();
-
-// Remove the link from the body
-document.body.removeChild(downloadLink);
+// Use fetch to send the POST request
+fetch(url, {
+  method: 'POST', // Specify the method
+  headers: {
+    'Content-Type': 'application/json' // Set the content type to JSON
+  },
+  body: valuesJson // Convert the JSON object to a string
+})
+.then(response => response.json())
+.then(valuesJson => console.log(valuesJson))
+.catch((error) => {
+  console.error('Error:', error);
+});
 }
-
-
-// Create a blob object representing the data as a JSON
-
-
 
