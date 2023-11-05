@@ -1,18 +1,39 @@
 import test
 import json
 
-inputFile = json.load("input.json","r")
-outputFile = json.load("output.json","w")
+inputFile = open("GUI\\data2.json",'r')
+outputFile = open("GUI\\output.json",'w+')
 
-data = inputFile.load(inputFile)
+data = json.load(inputFile)
 
-val = [data["GrossMonthlyIncome"],data["CreditCardPayment"],data["StudentLoanPayments"],data["AppraisedValue"],data["DownPayment"],data["LoanAmount"],data["MonthlyMortgagePayment"],data["CreditScore"]]
+income = float(data["INCOME"])
+mortgage = float(data["MORTGAGE"])
+credit = float(data["CREDIT"])
+car = float(data["CAR"])
+student = float(data["STUDENT"])
+creditc = float(data["CREDITC"])
+appraised = float(data["APPRAISED"])
+loan = float(data["LOAN"])
+down = float(data["DOWN"])
 
-point_vals = test.calcScores(val)
-if(test.predict(val) > 0.5):
+val = [income, creditc, car, student, appraised, down, loan, mortgage,credit]
+
+userPoints = test.predict(val)
+pointScale = test.calcScores(val)
+
+if(userPoints > 0.4):
     approved = "yes"
 else:
     approved = "no"
 
-json.dump(outputFile, {"val": approved})
+dictionary = {
+    "approved" : approved,
+    "userPoints" : userPoints[0],
+    "creditPoint" : pointScale[0],
+    "ltvPoint" : pointScale[1],
+    "dtiPoint" : pointScale[2],
+    "fedtiPoint" : pointScale[3]
+}
+json_object = json.dumps(dictionary)
+outputFile.write(json_object)
 

@@ -33,6 +33,7 @@ function getVal() {
     var creditC = document.getElementById('creditC').value;
     var appraised = document.getElementById('appraised').value;
     var down = document.getElementById('down').value;
+    var loan=document.getElementById('loan').value;
 
     var formValues = {
         INCOME: income,
@@ -42,7 +43,8 @@ function getVal() {
         STUDENT: student,
         CREDITC: creditC,
         APPRAISED: appraised,
-        DOWN: down
+        DOWN: down,
+        LOAN: loan
     };
     return formValues;
     // Create an object with the form values

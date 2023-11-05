@@ -29,6 +29,7 @@ function getVal() {
     const creditC = document.getElementById('creditC').value;
     const appraised = document.getElementById('appraised').value;
     const down = document.getElementById('down').value;
+    const loan=document.getElementById('loan').value;
 
     // Create an object with the form values
     
