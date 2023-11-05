@@ -1,7 +1,7 @@
 import test
 import json
 
-inputFile = open("GUI\\data2.json",'r')
+inputFile = open("data2.json",'r')
 outputFile = open("GUI\\output.json",'w+')
 
 data = json.load(inputFile)

@@ -10,7 +10,10 @@ def calcScores(val):
     DTI = debt/income
     FEDTI = val[7]/income
     point = 0
-
+    credit_point = 0
+    ltv_point = 0
+    dti_point = 0
+    fedti_points = 0
     if(CREDIT>=640):
         credit_point = (CREDIT*0.25)/850 #850 is the max credit score
 
